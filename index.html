@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Static Overlay Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="chart-bg-container">
+    <!-- 背景圖：自然高度撐開頁面 -->
+    <img id="bg-img" src="images/background.png" alt="背景圖">
+
+    <!-- 半腰標記：在背景高度 50% 處 -->
+    <div id="mid-marker"></div>
+
+    <!-- Title & Rainbow：絕對定位，initial 載入時淡入 -->
+    <img id="rainbow-img" class="overlay-img static initial" src="images/rainbow.png" alt="Rainbow">
+    <img id="title-img"   class="overlay-img static initial" src="images/title.png"   alt="Title">
+
+    <!-- Spotlight L/R：fixed 覆蓋，捲動過 marker 時顯示 -->
+    <img id="spotlight-l-img" class="overlay-img" src="images/spotlight-l.png" alt="Spotlight Left">
+    <img id="spotlight-r-img" class="overlay-img" src="images/spotlight-r.png" alt="Spotlight Right">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
