@@ -47,6 +47,10 @@
     height: auto;
     object-fit: cover;
     z-index: 5;
+    transition: opacity 1.5s ease-out;
+  }
+  .overlay-img.static#title-img{
+    transition: opacity 3s ease-out; 
   }
   
 /* Spotlight 改用寬度 100%、高度自動 */
@@ -57,6 +61,7 @@
     height: auto;       /* ← 改這裡 */
     object-fit: contain;   /* 或直接拿掉 object-fit */
     z-index: 10;
+    transition: opacity 2s ease-out; 
   }
   
   
