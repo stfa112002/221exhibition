@@ -27,4 +27,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', toggleSpotlights);
   toggleSpotlights();
+
+  // 3) 監聽前言標題與內容
+  const prefaces = [
+    document.getElementById('preface-title'),
+    document.getElementById('preface-content')
+  ];
+  
+  const prefaceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // 如果你只要出現一次，可以在這裡 unobserve:
+        prefaceObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1   // 10% 露出就觸發
+  });
+
+  prefaces.forEach(el => prefaceObserver.observe(el));
+
+  // 監聽 preface-content 進入後逐行淡入
+  const prefaceContent = document.getElementById('preface-content');
+  const contentObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // 只有執行一次
+        obs.unobserve(prefaceContent);
+
+        // 逐行淡入：間隔 600ms
+        const paragraphs = Array.from(prefaceContent.querySelectorAll('p'));
+        paragraphs.forEach((p, i) => {
+          setTimeout(() => p.classList.add('show'), i * 1000);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+
+  contentObserver.observe(prefaceContent);
 });
