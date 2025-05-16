@@ -48,22 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   prefaces.forEach(el => prefaceObserver.observe(el));
 
-  // 監聽 preface-content 進入後逐行淡入
-  const prefaceContent = document.getElementById('preface-content');
-  const contentObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // 只有執行一次
-        obs.unobserve(prefaceContent);
+  // 監聽 preface-content 進入後逐行淡入 + 按鈕延遲顯示
+const prefaceContent = document.getElementById('preface-content');
+const button         = document.getElementById('preface-button');
+const contentObserver = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      obs.unobserve(prefaceContent);
 
-        // 逐行淡入：間隔 600ms
-        const paragraphs = Array.from(prefaceContent.querySelectorAll('p'));
-        paragraphs.forEach((p, i) => {
-          setTimeout(() => p.classList.add('show'), i * 1000);
-        });
-      }
-    });
-  }, { threshold: 0.1 });
+      // 1) 逐行淡入段落
+      const paras = Array.from(prefaceContent.querySelectorAll('p'));
+      paras.forEach((p, i) => {
+        setTimeout(() => p.classList.add('show'), i * 600);
+      });
 
-  contentObserver.observe(prefaceContent);
+      // 2) 全部段落啟動後，再顯示按鈕
+      const totalDelay = paras.length * 600;
+      setTimeout(() => button.classList.add('active'), totalDelay + 300);
+    }
+  });
+}, { threshold: 0.1 });
+
+contentObserver.observe(prefaceContent);
+
 });
