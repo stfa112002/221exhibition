@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const rainbow = document.getElementById('rainbow-img');
   const title   = document.getElementById('title-img');
 
-  rainbow.classList.add('active');
+  setTimeout(() => {
+    rainbow.classList.add('active');
+  }, 200);
   
   // ② 延遲一段時間後再讓 Title 淡入（這裡以 1000ms 為例）
   setTimeout(() => {
