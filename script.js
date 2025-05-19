@@ -22,7 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleSpotlights() {
     const top = marker.getBoundingClientRect().top;
     if (top <= 0) {
-      spotlights.forEach(img => img.classList.add('active'));
+      spotlights.forEach(img => {
+        setTimeout(() => {
+          img.classList.add('active');
+        }, 100);
+      });
     } 
     // 不再移除，保持顯示
   }
