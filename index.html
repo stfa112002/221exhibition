@@ -1,6 +1,6 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,47 +9,37 @@
 </head>
 
 <body>
-  <div id="chart-bg-container">
-    <!-- 背景圖：自然高度撐開頁面 -->
-    <img id="bg-img"
-      src="https://lh3.googleusercontent.com/pw/AP1GczPI84gO_udguaZFkLvuALjNB-M0zirSfOx_BXazqhVoN_pcsS9IaUY-IB9LCZYUCdPcOiuyerP6sm_RFvjKuf8mL90eWQkmM8nV6CqyFw6lhaEVS9IItZuu3bpmmwvTj0XfIqhMCqQbTLrd202nlbgE=w230-h919-s-no-gm?authuser=0"
-      alt="背景圖">
+  <div class="device-frame">
+    <div id="chart-bg-container">
+      <!-- 背景圖：自然高度撐開框內捲動 -->
+      <img id="bg-img"
+        src="https://lh3.googleusercontent.com/pw/AP1GczPI84gO_udguaZFkLvuALjNB-M0zirSfOx_BXazqhVoN_pcsS9IaUY-IB9LCZYUCdPcOiuyerP6sm_RFvjKuf8mL90eWQkmM8nV6CqyFw6lhaEVS9IItZuu3bpmmwvTj0XfIqhMCqQbTLrd202nlbgE=w230-h919-s-no-gm?authuser=0"
+        alt="背景圖">
 
-    <!-- 半腰標記：在背景高度 40% 處 -->
-    <div id="mid-marker"></div>
-    <div id="preface-title" class="abs">
-      <h1>前言</h1>
-    </div>
-    <div id="preface-content" class="abs">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius a nibh in faucibus. Duis tempus sem
-        non erat sollicitudin venenatis. Pellentesque ac hendrerit velit, id mollis orci. Vivamus dolor tortor, congue a
-        suscipit eget, suscipit non odio. Phasellus quis porttitor enim, nec imperdiet arcu. Suspendisse nec ligula quis
-        magna accumsan lobortis. Mauris et cursus elit, ac pretium augue. Ut lectus est, feugiat id maximus non,
-        tincidunt at leo. Proin vel orci mauris. Suspendisse potenti. Phasellus id dolor a massa volutpat placerat sit
-        amet sit amet nulla. Integer eget fringilla dolor, ac pellentesque libero.</p>
-      <p>Nullam condimentum sem tincidunt pretium pretium. Nulla imperdiet dapibus sem. Donec posuere nec sapien quis
-        sagittis. Aenean non tincidunt ante. Nam pulvinar ut velit nec dignissim. Morbi vehicula quam in orci accumsan,
-        ac mattis ante tristique. Nulla pharetra eros eu tristique ultrices.</p>
-      <a id="preface-button" href="https://tcssh.tc.edu.tw/" target="_blank">各專題介紹</a>
-    </div>
-    <!-- Title & Rainbow：絕對定位，initial 載入時淡入 -->
-    <img id="rainbow-img" class="overlay-img static initial"
-      src="https://lh3.googleusercontent.com/pw/AP1GczPs0uSCf6pbEUgyzjMoWEEMdb9sDR8nkor36cEkqxQ_hTivfJfz7dx72mvkC78qFPWWJPtAMoUA5-x3Bl0Oyjkr6b-PtgDLrBRnyqcxSEjqi2jOqka7tdT90f9zXIVmH5DVuZsqSe70dDqiYY80vG8T=w230-h919-s-no-gm?authuser=0"
-      alt="Rainbow">
-    <img id="title-img" class="overlay-img static initial"
-      src="https://lh3.googleusercontent.com/pw/AP1GczPdz4l0ueeRh5AolkRS4QEdcsefFs7R8obqOVCFx8_pZ4dzkQUbzmHq_J2SRxRLcNbL9w9m3ZZ-8LIz6-WEAAwi_ouLInLzT4CQAe2ORM-D3ofhtXP0em0G76bie03kQFTdbo0IWX7oKI3OsoxTqHmV=w230-h919-s-no-gm?authuser=0"
-      alt="Title">
+      <div id="mid-marker"></div>
+      <div id="preface-title" class="abs"><h1>前言</h1></div>
+      <div id="preface-content" class="abs">
+        <p>Lorem ipsum dolor sit amet...</p>
+        <p>Nullam condimentum sem tincidunt pretium...</p>
+        <a id="preface-button" href="https://tcssh.tc.edu.tw/" target="_blank">各專題介紹</a>
+      </div>
 
-    <!-- Spotlight L/R：fixed 覆蓋，捲動過 marker 時顯示 -->
-    <img id="spotlight-l-img" class="overlay-img"
-      src="https://lh3.googleusercontent.com/pw/AP1GczNLI5F_bhEM7xIRKgDB9yye2G_XzkUjxCZpwQS9Ki_PsET1Yldf2qgWnfsJMIauJQM9btAPQggIaGVjYUyb_JcE0vkgAQl59l3n2SPZBZW2LD3IrBCiCVfD-QKRIv0zJBLyhOFl7m99YmKau6FAiAxO=w230-h919-s-no-gm?authuser=0"
-      alt="Spotlight Left">
-    <img id="spotlight-r-img" class="overlay-img"
-      src="https://lh3.googleusercontent.com/pw/AP1GczNzBlNPx_Jf8HkKvw0ORXM3EJojAKfij3MKMkg2ijBmPjRv-8rLJL1lnFNOR0ioWV0dwBmYlxUEpNdgnnO4jpkrc-kpg5exJMUAXrc1gDvmhvatAuJzMbkKbrR5rgEALCqFBOiKHLZKEk192zr83Jbx=w230-h919-s-no-gm?authuser=0"
-      alt="Spotlight Right">
+      <img id="rainbow-img" class="overlay-img static initial"
+        src="https://lh3.googleusercontent.com/pw/AP1GczPs0uSCf6pbEUgyzjMoWEEMdb9sDR8nkor36cEkqxQ_hTivfJfz7dx72mvkC78qFPWWJPtAMoUA5-x3Bl0Oyjkr6b-PtgDLrBRnyqcxSEjqi2jOqka7tdT90f9zXIVmH5DVuZsqSe70dDqiYY80vG8T=w230-h919-s-no-gm?authuser=0"
+        alt="Rainbow">
+      <img id="title-img" class="overlay-img static initial"
+        src="https://lh3.googleusercontent.com/pw/AP1GczPdz4l0ueeRh5AolkRS4QEdcsefFs7R8obqOVCFx8_pZ4dzkQUbzmHq_J2SRxRLcNbL9w9m3ZZ-8LIz6-WEAAwi_ouLInLzT4CQAe2ORM-D3ofhtXP0em0G76bie03kQFTdbo0IWX7oKI3OsoxTqHmV=w230-h919-s-no-gm?authuser=0"
+        alt="Title">
+
+      <img id="spotlight-l-img" class="overlay-img"
+        src="https://lh3.googleusercontent.com/pw/AP1GczNLI5F_bhEM7xIRKgDB9yye2G_XzkUjxCZpwQS9Ki_PsET1Yldf2qgWnfsJMIauJQM9btAPQggIaGVjYUyb_JcE0vkgAQl59l3n2SPZBZW2LD3IrBCiCVfD-QKRIv0zJBLyhOFl7m99YmKau6FAiAxO=w230-h919-s-no-gm?authuser=0"
+        alt="Spotlight Left">
+      <img id="spotlight-r-img" class="overlay-img"
+        src="https://lh3.googleusercontent.com/pw/AP1GczNzBlNPx_Jf8HkKvw0ORXM3EJojAKfij3MKMkg2ijBmPjRv-8rLJL1lnFNOR0ioWV0dwBmYlxUEpNdgnnO4jpkrc-kpg5exJMUAXrc1gDvmhvatAuJzMbkKbrR5rgEALCqFBOiKHLZKEk192zr83Jbx=w230-h919-s-no-gm?authuser=0"
+        alt="Spotlight Right">
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>

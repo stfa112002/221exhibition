@@ -158,3 +158,66 @@ body {
 #preface-button:hover {
   background-color: rgba(255,255,255,1);
 }
+
+@media only screen and (min-width: 600px) {
+  html, body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+  }
+
+  .device-frame {
+    width: min(390px, 90vw);
+    aspect-ratio: 390 / 844;
+    border: 16px solid #333;
+    border-radius: 56px;
+    box-shadow: 0 0 0 8px #ccc;
+    background: #000;
+    position: relative;   /* ← 定位基準：假手機框 */
+    overflow: auto;
+  }
+
+  /* ❶ 取消 chart-bg-container 的 relative，讓 .abs、.overlay-img 定位到 .device-frame */
+  .device-frame #chart-bg-container {
+    width: 100%;
+    position: static;     /* ← 從 relative 改成 static */
+  }
+
+  /* ❷ 所有前言 (.abs) 和 overlay-img 都直接絕對定位到 device-frame */
+  .device-frame .overlay-img,
+  .device-frame .abs {
+    position: absolute;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* ❸ rainbow & title 貼頂全寬 */
+  .device-frame .overlay-img.static {
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ❹ spotlight 也貼頂全寬 */
+  .device-frame .overlay-img:not(.static) {
+    top: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* ❺ 前言標題、內容 回到「原本的位置」：100% / 110% frame 高度 */
+  .device-frame #preface-title {
+    top: 100%;   /* 第一個畫面之後 */
+    z-index: 9999;
+  }
+  .device-frame #preface-content {
+    top: 110%;   /* 再往下一點 */
+    z-index: 9999;
+  }
+}
